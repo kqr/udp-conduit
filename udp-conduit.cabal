@@ -1,5 +1,5 @@
 name:                udp-conduit
-version:             0.1.0.0
+version:             0.1.0.2
 synopsis:            Simple fire-and-forget conduit UDP wrappers
 description:
     `udp-conduit` provides simple wrappers to get fire-and-forget UDP sinks
