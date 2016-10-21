@@ -3,7 +3,6 @@ module Conduit.UDP
     , udpSource
     ) where
 
-import Data.Void (Void)
 import Data.IOData (IOData)
 import Data.MonoTraversable (MonoFoldable)
 import System.IO (IOMode(ReadMode, WriteMode), Handle)
@@ -52,7 +51,7 @@ udpSink
     :: (MonadResource m, IOData a)
     => String -- ^ address to destination
     -> PortNumber -- ^ port number on destination
-    -> ConduitM a Void m () -- ^ Can be viewed as a @'Data.Conduit.Sink' ByteString@
+    -> ConduitM a o m () -- ^ Can be viewed as a @'Data.Conduit.Sink' ByteString@
 udpSink host port =
     sinkIOHandle (udpHandle host port SinkSocket)
 
@@ -65,7 +64,7 @@ udpSource
     :: (MonadResource m, IOData a, MonoFoldable a)
     => String -- ^ address to bind to
     -> PortNumber -- ^ port number to bind to
-    -> ConduitM () a m () -- ^ Can be viewed as a @'MonadIO m => Data.Conduit.Source m ByteString'@
+    -> ConduitM i a m () -- ^ Can be viewed as a @MonadIO m => 'Data.Conduit.Source' m ByteString@
 udpSource host port =
     sourceIOHandle (udpHandle host port SourceSocket)
 
