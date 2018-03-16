@@ -1,5 +1,5 @@
 name:                udp-conduit
-version:             0.1.0.4
+version:             0.2.0.0
 synopsis:            Simple fire-and-forget conduit UDP wrappers
 description:
     `udp-conduit` provides simple wrappers to get fire-and-forget UDP sinks
@@ -9,7 +9,8 @@ license:             ISC
 license-file:        LICENSE
 author:              kqr
 maintainer:          k@rdw.se
-copyright:           (c) 2016 kqr
+copyright:           (c) 2016 kqr,
+                         2018 Mihai Giurgeanu
 category:            Data, Conduit
 build-type:          Simple
 extra-source-files:  README.md
